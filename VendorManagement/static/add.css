@@ -1,0 +1,55 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #444;
+}
+
+input,
+select,
+textarea,
+button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #61dafb;
+    outline: none;
+}
+
+button {
+    background-color: #61dafb;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #21a1f1;
+    transform: scale(1.05);
+}

@@ -1,0 +1,57 @@
+{% extends "baseNav.html" %}
+
+{% block title %}Add Vendor{% endblock %}
+
+{% block main %}
+<main>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <h1>Vendor Details</h1>
+            <div>
+                <label for="vendorname">Name: </label>
+                <input type="text" name="vendorname" id="vendorname">
+            </div>
+            <div>
+                <label for="vendorphone">Phone Number: </label>
+                <input type="tel" name="vendorphone" id="vendorphone">
+            </div>
+            <div>
+                <label for="vendoremail">Email: </label>
+                <input type="email" name="vendoremail" id="vendoremail">
+            </div>
+            <div>
+                <label for="role">Role: </label>
+                <select name="role" id="role">
+                    <option value="buyer">Buyer</option>
+                    <option value="seller">Seller</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <h1>Product Details</h1>
+            <div>
+                <label for="productname">Product Name: </label>
+                <input type="text" name="productname" id="productname">
+            </div>
+            <div>
+                <label for="productcategory">Category: </label>
+                <input type="text" name="productcategory" id="productcategory">
+            </div>
+            <div>
+                <label for="productprice">Price: </label>
+                <input type="number" name="productprice" id="productprice">
+            </div>
+            <div>
+                <label for="productquantity">Quantity: </label>
+                <input type="number" name="productquantity" id="productquantity">
+            </div>
+            <div>
+                <label for="productdescription">Description: </label>
+                <textarea name="productdescription" id="productdescription"></textarea>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</main>
+{% endblock %}

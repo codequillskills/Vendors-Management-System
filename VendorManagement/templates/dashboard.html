@@ -1,0 +1,56 @@
+{% extends "baseNav.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block main %}
+<main>
+    <h1>Dashboard</h1>
+
+    {% if vendors %}
+    <h2>Your Vendors and Products</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Vendor Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vendor in vendors %}
+            <tr>
+                <td>{{ vendor.name }}</td>
+                <td>{{ vendor.phone_number }}</td>
+                <td>{{ vendor.email }}</td>
+                <td>{{ vendor.role }}</td>
+                <td>{{ vendor.created_at }}</td>
+                <td>
+                    <a href="{% url 'delete_vendor' vendor.id %}" class="delete-btn"
+                        onclick="return confirm('Are you sure you want to delete this vendor?');">Delete</a>
+                </td>
+            </tr>
+            {% for product in vendor.product_set.all %}
+            <tr>
+                <td colspan="6">
+                    <div class="product-details">
+                        <strong>Product Name:</strong> {{ product.name }}<br>
+                        <strong>Category:</strong> {{ product.category }}<br>
+                        <strong>Price:</strong> {{ product.price }}<br>
+                        <strong>Quantity:</strong> {{ product.quantity }}<br>
+                        <strong>Description:</strong> {{ product.description }}<br>
+                        <strong>Created At:</strong> {{ product.created_at }}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h2>You have No Vendors or Products.</h2>
+    {% endif %}
+</main>
+{% endblock %}
