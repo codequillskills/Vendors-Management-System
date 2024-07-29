@@ -4,10 +4,8 @@
 
 {% block main %}
 <main>
-    <h1>Dashboard</h1>
-
     {% if vendors %}
-    <h2>Your Vendors and Products</h2>
+    <h1>Your Vendors and Products</h1>
     <table>
         <thead>
             <tr>
@@ -50,7 +48,7 @@
         </tbody>
     </table>
     {% else %}
-    <h2>You have No Vendors or Products.</h2>
+    <h1>You have No Vendors or Products.</h1>
     {% endif %}
 </main>
 {% endblock %}
